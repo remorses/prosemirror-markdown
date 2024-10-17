@@ -317,4 +317,4 @@ declare class MarkdownSerializerState {
     };
 }
 
-export { MarkdownParser, MarkdownSerializer, MarkdownSerializerState, type ParseSpec, defaultMarkdownParser, defaultMarkdownSerializer, schema };
+export { MarkdownParser, MarkdownSerializer, MarkdownSerializerState, ParseSpec, defaultMarkdownParser, defaultMarkdownSerializer, schema };
