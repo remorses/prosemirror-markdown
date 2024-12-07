@@ -306,7 +306,7 @@ var MarkdownParseState = function () {
       marks: prosemirrorModel.Mark.none
     }];
   }
-  _createClass(MarkdownParseState, [{
+  return _createClass(MarkdownParseState, [{
     key: "top",
     value: function top() {
       return this.stack[this.stack.length - 1];
@@ -375,7 +375,6 @@ var MarkdownParseState = function () {
       return this.addNode(info.type, info.attrs, info.content);
     }
   }]);
-  return MarkdownParseState;
 }();
 function attrs(spec, token, tokens, i) {
   if (spec.getAttrs) return spec.getAttrs(token, tokens, i);else if (spec.attrs instanceof Function) return spec.attrs(token);else return spec.attrs;
@@ -461,7 +460,7 @@ var MarkdownParser = function () {
     this.tokens = tokens;
     this.tokenHandlers = tokenHandlers(schema, tokens);
   }
-  _createClass(MarkdownParser, [{
+  return _createClass(MarkdownParser, [{
     key: "parse",
     value: function parse(text) {
       var markdownEnv = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -474,7 +473,6 @@ var MarkdownParser = function () {
       return doc || this.schema.topNodeType.createAndFill();
     }
   }]);
-  return MarkdownParser;
 }();
 function listIsTight(tokens, i) {
   while (++i < tokens.length) if (tokens[i].type != "list_item_open") return tokens[i].hidden;
@@ -574,7 +572,7 @@ var MarkdownSerializer = function () {
     this.marks = marks;
     this.options = options;
   }
-  _createClass(MarkdownSerializer, [{
+  return _createClass(MarkdownSerializer, [{
     key: "serialize",
     value: function serialize(content) {
       var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -584,7 +582,6 @@ var MarkdownSerializer = function () {
       return state.out;
     }
   }]);
-  return MarkdownSerializer;
 }();
 var defaultMarkdownSerializer = new MarkdownSerializer({
   blockquote: function blockquote(state, node) {
@@ -709,7 +706,7 @@ var MarkdownSerializerState = function () {
     if (typeof this.options.tightLists == "undefined") this.options.tightLists = false;
     if (typeof this.options.hardBreakNodeName == "undefined") this.options.hardBreakNodeName = "hard_break";
   }
-  _createClass(MarkdownSerializerState, [{
+  return _createClass(MarkdownSerializerState, [{
     key: "flushClose",
     value: function flushClose() {
       var size = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 2;
@@ -922,7 +919,6 @@ var MarkdownSerializerState = function () {
       };
     }
   }]);
-  return MarkdownSerializerState;
 }();
 exports.MarkdownParser = MarkdownParser;
 exports.MarkdownSerializer = MarkdownSerializer;
